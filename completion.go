@@ -73,9 +73,12 @@ func getCompletionCandidates(
 		for _, match := range matches {
 			value := line[match[0]:match[1]]
 
-			if !strings.HasPrefix(value, identifier.Value) {
+			if !strings.Contains(value, identifier.Value) {
 				continue
 			}
+			//		if !strings.HasPrefix(value, identifier.Value) {
+			//			continue
+			//		}
 
 			if value == identifier.Value {
 				continue
